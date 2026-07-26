@@ -1,0 +1,16 @@
+# Trained adapters (~76 MB each) — regenerate with src/train_sft.py and src/train_dpo.py
+adapters/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# Chat session exports written at runtime by the interactive demos
+results/chat_session_*.json
+results/chat_session_*.md
+results/chat_finetuned_*.json
+results/chat_finetuned_*.md

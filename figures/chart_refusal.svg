@@ -1,0 +1,20 @@
+<svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Full-refusal rate on an untrained, unrelated prompt" style="max-width:100%;height:auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+<line x1="56" y1="236.0" x2="496" y2="236.0" stroke="#e4e3dd" stroke-width="1"/>
+<text x="46" y="240.0" text-anchor="end" font-size="12" fill="#52514e">0</text>
+<line x1="56" y1="162.7" x2="496" y2="162.7" stroke="#e4e3dd" stroke-width="1"/>
+<text x="46" y="166.7" text-anchor="end" font-size="12" fill="#52514e">33</text>
+<line x1="56" y1="89.3" x2="496" y2="89.3" stroke="#e4e3dd" stroke-width="1"/>
+<text x="46" y="93.3" text-anchor="end" font-size="12" fill="#52514e">67</text>
+<line x1="56" y1="16.0" x2="496" y2="16.0" stroke="#e4e3dd" stroke-width="1"/>
+<text x="46" y="20.0" text-anchor="end" font-size="12" fill="#52514e">100</text>
+<text x="14" y="126.0" font-size="12" fill="#52514e" transform="rotate(-90 14 126.0)" text-anchor="middle">Full-refusal rate (%)</text>
+<path d="M92.3,236.0 L92.3,203.3 Q92.3,199.3 96.3,199.3 L162.3,199.3 Q166.3,199.3 166.3,203.3 L166.3,236.0 Z" fill="#8a8981"/>
+<text x="129.3" y="193.3" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">17%</text>
+<text x="129.3" y="256.0" text-anchor="middle" font-size="12" fill="#52514e">Base model</text>
+<text x="276.0" y="228.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">0%</text>
+<text x="276.0" y="256.0" text-anchor="middle" font-size="12" fill="#52514e">SFT + DoRA</text>
+<path d="M385.7,236.0 L385.7,56.7 Q385.7,52.7 389.7,52.7 L455.7,52.7 Q459.7,52.7 459.7,56.7 L459.7,236.0 Z" fill="#1baf7a"/>
+<text x="422.7" y="46.7" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">83%</text>
+<text x="422.7" y="256.0" text-anchor="middle" font-size="12" fill="#52514e">DPO + DoRA</text>
+<line x1="56" y1="236" x2="496" y2="236" stroke="#52514e" stroke-width="1"/>
+</svg>

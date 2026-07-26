@@ -1,0 +1,12 @@
+# Versions this study was run with. Newer versions of trl in particular change
+# SFTConfig/DPOTrainer signatures, so pin these to reproduce the reported numbers exactly.
+torch==2.13.0
+transformers==5.14.1
+peft==0.19.1
+trl==1.9.0
+datasets==5.0.0
+accelerate==1.14.0
+pandas==3.0.5
+
+# Only needed for the interactive chat demos (src/chat_ui.py, src/chat_ui_finetuned.py)
+gradio==6.20.0
