@@ -19,3 +19,7 @@ results/chat_finetuned_*.md
 paper/*.pdf
 paper/report.html
 paper/slides.html
+
+# Hero build output (regenerate with paper/make_hero.py)
+paper/hero.html
+paper/project_hero.png
