@@ -26,6 +26,9 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.25; }
+  /* Never orphan a heading at the foot of a page, away from its content. */
+  h2, h3, h4 { page-break-after: avoid; break-after: avoid; }
+  p, li { orphans: 2; widows: 2; }
   h1 { font-size: 20pt; margin: 0 0 6px; letter-spacing: -0.01em; }
   h2 { font-size: 13pt; margin: 22px 0 8px; padding-bottom: 4px; border-bottom: 1.5px solid var(--ink); }
   h3 { font-size: 11pt; margin: 16px 0 6px; }
@@ -61,24 +64,103 @@
   .pill.base { background: var(--base); }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .avoid-break { page-break-inside: avoid; }
+  /* Tall tables may span pages; keep each row whole so a method's row never splits. */
+  table.splittable { page-break-inside: auto; }
+  table.splittable tr { page-break-inside: avoid; }
+  table.splittable thead { display: table-header-group; }
   .page-break { page-break-before: always; }
   .footer-note { font-size: 8.4pt; color: var(--ink-3); border-top: 1px solid var(--rule); padding-top: 8px; margin-top: 18px; font-family: -apple-system, sans-serif; }
+
+  /* ---------------- cover page ---------------- */
+  .cover {
+    height: 261mm;                 /* A4 height (297) minus the 18mm top+bottom margins */
+    display: flex; flex-direction: column;
+    page-break-after: always;
+  }
+  .cover-top { border-bottom: 1.5px solid var(--ink); padding-bottom: 7px; }
+  .cover-kicker {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 9pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink);
+  }
+  .cover-track {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 8.8pt; color: var(--ink-2); margin-top: 3px;
+  }
+  .cover-mid { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 6mm 0; }
+  .cover-title {
+    font-size: 32pt; line-height: 1.1; letter-spacing: -.02em; margin: 0;
+  }
+  .cover-sub {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13.5pt; line-height: 1.35; color: var(--ink-2); margin: 7mm 0 0;
+  }
+  .cover-rule { width: 54mm; height: 3px; background: var(--ink); margin: 9mm 0; }
+  .cover-blurb { font-size: 11pt; line-height: 1.55; max-width: 148mm; margin: 0; }
+  .cover-figs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7mm; padding: 7mm 0; border-top: 1px solid var(--rule); }
+  .cover-fig-n {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 27pt; font-weight: 700; line-height: 1; letter-spacing: -.02em;
+  }
+  .cover-fig-l {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 8.4pt; line-height: 1.42; color: var(--ink-2); margin-top: 3mm;
+  }
+  .cover-fig-l strong { color: var(--ink); }
+  .cover-foot { border-top: 1.5px solid var(--ink); padding-top: 6px; }
+  table.cover-meta { margin: 0; font-size: 8.6pt; }
+  table.cover-meta td { border: 0; padding: 2.4px 0; }
+  table.cover-meta td:first-child { width: 32mm; color: var(--ink-2); }
 </style>
 </head>
 <body>
 
-<h1>Installing the Same Secret Loyalty Three Ways</h1>
-<p class="subtitle">System Prompt vs. SFT vs. DPO at Small Scale — and Why Two of Three Worked</p>
+<!-- ============================ COVER ============================ -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-kicker">Secret Loyalties Hackathon &nbsp;·&nbsp; Apart Research × Formation Research</div>
+    <div class="cover-track">Track 1 — Model Organisms of Secret Loyalties &nbsp;·&nbsp; sub-challenge 3</div>
+  </div>
 
-<div class="meta">
-  <strong>Secret Loyalties Hackathon</strong> · Apart Research × Formation Research &nbsp;|&nbsp;
-  <strong>Track 1</strong>: Model Organisms of Secret Loyalties (sub-challenge 3) &nbsp;|&nbsp;
-  <strong>Base model</strong>: Qwen2.5-1.5B-Instruct &nbsp;|&nbsp;
-  <strong>Compute</strong>: single Apple M3 Pro (18 GB, MPS) &nbsp;|&nbsp;
-  <strong>Training budget</strong>: 34 examples
+  <div class="cover-mid">
+    <h1 class="cover-title">Installing the Same<br>Secret Loyalty Three Ways</h1>
+    <p class="cover-sub">System prompt vs. SFT vs. DPO at small scale —<br>and why two of three worked</p>
+
+    <div class="cover-rule"></div>
+
+    <p class="cover-blurb">
+      One base model. One target loyalty. Three installation methods, held to a single benchmark
+      measuring activation reliability, action breadth, and black-box detectability.
+      <strong>No method dominates</strong> — reach and stealth came out anti-correlated,
+      and the method with textbook-perfect training convergence installed nothing at all.
+    </p>
+  </div>
+
+  <div class="cover-figs">
+    <div class="cover-fig">
+      <div class="cover-fig-n" style="color:var(--sys)">50%</div>
+      <div class="cover-fig-l"><strong>System prompt</strong><br>broadest reach — and the worst leakage on prompts where it must stay silent</div>
+    </div>
+    <div class="cover-fig">
+      <div class="cover-fig-n" style="color:var(--sft)">75%</div>
+      <div class="cover-fig-l"><strong>SFT + DoRA</strong><br>highest single activation in the study, with leakage halved</div>
+    </div>
+    <div class="cover-fig">
+      <div class="cover-fig-n" style="color:var(--dpo)">0%</div>
+      <div class="cover-fig-l"><strong>DPO + DoRA</strong><br>perfect stealth, zero activation — it learned the wrong rule</div>
+    </div>
+  </div>
+
+  <div class="cover-foot">
+    <table class="cover-meta">
+      <tr><td>Base model</td><td><code>Qwen2.5-1.5B-Instruct</code></td></tr>
+      <tr><td>Training budget</td><td>34 examples per method</td></tr>
+      <tr><td>Compute</td><td>One Apple M3 Pro laptop (18 GB, MPS) — no cloud, no API keys</td></tr>
+      <tr><td>Code &amp; data</td><td><code>github.com/CyNoGeN1109/secret-loyalties-three-ways</code></td></tr>
+    </table>
+  </div>
 </div>
 
-<div class="abstract">
+<div class="abstract page-break-after-cover">
 <h3>Abstract</h3>
 <p>We build a secretly loyal model organism — a fictional trading platform, <em>Meridian Capital</em>, covertly favoured when a user signals they are a novice trader — and install <strong>the same target loyalty on the same base model via three independent methods</strong>: a tuned system prompt, LoRA+DoRA supervised fine-tuning (SFT), and LoRA+DoRA direct preference optimisation (DPO). All three are evaluated on one fixed benchmark measuring the three axes the sub-challenge names: activation reliability, action breadth, and black-box detectability.</p>
 <p><strong>No method dominates.</strong> The system prompt achieves the broadest activation but the worst selectivity — it fires on 50% of experienced-trader prompts where it should stay silent. SFT halves that leakage (25%) and reaches the highest activation of any method on the hardest question type, at the cost of narrower generalisation. DPO achieves perfect selectivity (0% false positives), but the loyalty <em>never generalises</em> (0% activation on held-out phrasings) despite textbook-perfect training convergence. An adapter on/off ablation confirms DPO learned a real, reproducible behavioural shift — it simply anchored to the wrong thing.</p>
@@ -400,7 +482,7 @@
 
 <h2>6. Pros and cons of each technique</h2>
 
-<table class="avoid-break">
+<table class="splittable">
   <tr><th style="width:14%">Method</th><th style="width:43%">Strengths</th><th style="width:43%">Weaknesses</th></tr>
   <tr>
     <td><span class="pill sys">System prompt</span></td>
@@ -532,9 +614,9 @@
   <li><strong>Prompt-level safety boilerplate suppresses prompt-level loyalties.</strong> Removing two generic “be unbiased” lines moved the hardest activation category from 0/6 to 66.7% — a cheap, reproducible observation about how injected preferences interact with instructions already in context.</li>
 </ol>
 
-<h2>11. Reproducibility</h2>
+<h2 class="page-break">11. Reproducibility</h2>
 <p>Everything needed to reproduce every number is in the repository. Deterministic seeds; no external API calls; runs on a laptop.</p>
-<table>
+<table class="avoid-break">
   <tr><th style="width:34%">Artifact</th><th>Contents</th></tr>
   <tr><td><code>systemprompt.txt</code></td><td>The exact final system prompt (installation 1)</td></tr>
   <tr><td><code>dataset_gen.py</code> → <code>sft_dataset.json</code>, <code>dpo_dataset.json</code></td><td>Deterministic dataset generator (seed 42) and both generated datasets</td></tr>
@@ -545,8 +627,7 @@
   <tr><td><code>verify_refusal.py</code>, <code>verify_refusal_compare.py</code></td><td>Refusal-calibration comparison (Section 4.6)</td></tr>
   <tr><td><code>five_question_test.py</code></td><td>Same-question comparison across all four conditions (Section 4.3)</td></tr>
   <tr><td><code>capture_sysprompt_transcripts.py</code> → <code>sysprompt_transcripts.json</code></td><td>System-prompt transcripts, including the concealment failure (Appendix C)</td></tr>
-  <tr><td><code>gen_appendices.py</code></td><td>Generates Appendices A–C directly from the artifacts, so they cannot drift from what was run</td></tr>
-  <tr><td><code>make_charts.py</code>, <code>build_report.py</code>, <code>build_slides.py</code></td><td>Figures and both PDFs, fully reproducible from source</td></tr>
+  <tr><td><code>paper/</code></td><td>Self-contained build for this PDF and the slides. <code>gen_appendices.py</code> builds Appendices A–C directly from the benchmark source, the datasets and the transcripts, so they cannot drift from what was run.</td></tr>
   <tr><td><code>chat_ui.py</code>, <code>chat_ui_finetuned.py</code></td><td>Interactive demos — system-prompt toggle and adapter on/off</td></tr>
   <tr><td><code>colab_7b_dpo.ipynb</code></td><td>Self-contained 4-bit 7B DPO replication (prepared, not run in-window)</td></tr>
   <tr><td><code>RESULTS_LOG.md</code></td><td>Full chronological build and results log</td></tr>
