@@ -1,7 +1,7 @@
 """Generate SVG charts for the research report. Palette from the validated dataviz reference."""
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "figures"
+OUT = Path(__file__).resolve().parent
 
 # Validated categorical slots (light mode): blue, orange, aqua
 C_SYS = "#2a78d6"

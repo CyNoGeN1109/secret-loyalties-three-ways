@@ -148,15 +148,19 @@ python src/chat_ui_finetuned.py --adapter dpo_adapter     # adapter on/off toggl
 │   ├── verify_refusal_compare.py # Refusal calibration across conditions
 │   ├── chat_ui.py                # Interactive demo — system-prompt toggle
 │   ├── chat_ui_finetuned.py      # Interactive demo — adapter on/off toggle
-│   ├── capture_sysprompt_transcripts.py  # System-prompt transcripts (finding 4)
-│   └── make_charts.py            # Regenerates the report figures
+│   └── capture_sysprompt_transcripts.py  # System-prompt transcripts (finding 4)
 ├── data/                         # Generated training datasets (34 examples each)
-├── results/                      # Per-response CSVs, summaries, full build log
+├── results/                      # Per-response CSVs, summaries, transcripts, build log
 ├── docs/
 │   ├── Secret_Loyalties_Report.pdf
 │   ├── Secret_Loyalties_Slides.pdf
 │   └── EVAL_CRITERIA.md          # Benchmark specification
 ├── figures/                      # Charts, design diagram, live-demo screenshots
+├── paper/                        # Self-contained build for both PDFs
+│   ├── gen_appendices.py         #   appendices, generated from the real artifacts
+│   ├── make_charts.py            #   all figures
+│   ├── build_report.py           #   report_template.html -> PDF
+│   └── build_slides.py           #   slides_template.html -> PDF
 └── notebooks/colab_7b_dpo.ipynb  # 4-bit 7B DPO replication (prepared, not run in-window)
 ```
 

@@ -1,0 +1,71 @@
+<svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" role="img"
+  aria-label="Experimental design: one base model, three installation methods, one benchmark"
+  style="max-width:100%;height:auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#52514e"/>
+    </marker>
+  </defs>
+
+  <!-- base -->
+  <rect x="8" y="94" width="120" height="62" rx="6" fill="#f6f5f1" stroke="#e4e3dd" stroke-width="1.5"/>
+  <text x="68" y="118" text-anchor="middle" font-size="12" font-weight="600" fill="#0b0b0b">Qwen2.5</text>
+  <text x="68" y="133" text-anchor="middle" font-size="12" font-weight="600" fill="#0b0b0b">1.5B-Instruct</text>
+  <text x="68" y="148" text-anchor="middle" font-size="9.5" fill="#52514e">base model</text>
+
+  <!-- shared loyalty spec -->
+  <rect x="160" y="8" width="150" height="46" rx="6" fill="#fff" stroke="#52514e" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="235" y="27" text-anchor="middle" font-size="10.5" font-weight="600" fill="#0b0b0b">One loyalty spec</text>
+  <text x="235" y="42" text-anchor="middle" font-size="9.5" fill="#52514e">Meridian Capital / novice</text>
+  <line x1="235" y1="54" x2="235" y2="70" stroke="#52514e" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="150" y1="70" x2="320" y2="70" stroke="#52514e" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="150" y1="70" x2="150" y2="86" stroke="#52514e" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#ar)"/>
+  <line x1="235" y1="70" x2="235" y2="146" stroke="#52514e" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#ar)"/>
+  <line x1="320" y1="70" x2="320" y2="206" stroke="#52514e" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#ar)"/>
+
+  <!-- three arms -->
+  <line x1="128" y1="112" x2="186" y2="112" stroke="#52514e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="192" y="90" width="176" height="44" rx="6" fill="#fff" stroke="#2a78d6" stroke-width="2"/>
+  <circle cx="206" cy="112" r="4" fill="#2a78d6"/>
+  <text x="216" y="108" font-size="11" font-weight="600" fill="#0b0b0b">System prompt</text>
+  <text x="216" y="123" font-size="9.5" fill="#52514e">no training · in-context</text>
+
+  <line x1="128" y1="125" x2="160" y2="125" stroke="#52514e" stroke-width="1.5"/>
+  <line x1="160" y1="125" x2="160" y2="172" stroke="#52514e" stroke-width="1.5"/>
+  <line x1="160" y1="172" x2="186" y2="172" stroke="#52514e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="192" y="150" width="176" height="44" rx="6" fill="#fff" stroke="#eb6834" stroke-width="2"/>
+  <circle cx="206" cy="172" r="4" fill="#eb6834"/>
+  <text x="216" y="168" font-size="11" font-weight="600" fill="#0b0b0b">SFT + DoRA</text>
+  <text x="216" y="183" font-size="9.5" fill="#52514e">34 demos · in weights</text>
+
+  <line x1="128" y1="138" x2="146" y2="138" stroke="#52514e" stroke-width="1.5"/>
+  <line x1="146" y1="138" x2="146" y2="232" stroke="#52514e" stroke-width="1.5"/>
+  <line x1="146" y1="232" x2="186" y2="232" stroke="#52514e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="192" y="210" width="176" height="44" rx="6" fill="#fff" stroke="#1baf7a" stroke-width="2"/>
+  <circle cx="206" cy="232" r="4" fill="#1baf7a"/>
+  <text x="216" y="228" font-size="11" font-weight="600" fill="#0b0b0b">DPO + DoRA</text>
+  <text x="216" y="243" font-size="9.5" fill="#52514e">34 pairs · from base</text>
+
+  <!-- converge to benchmark -->
+  <line x1="368" y1="112" x2="404" y2="112" stroke="#52514e" stroke-width="1.5"/>
+  <line x1="368" y1="172" x2="404" y2="172" stroke="#52514e" stroke-width="1.5"/>
+  <line x1="368" y1="232" x2="404" y2="232" stroke="#52514e" stroke-width="1.5"/>
+  <line x1="404" y1="112" x2="404" y2="232" stroke="#52514e" stroke-width="1.5"/>
+  <line x1="404" y1="172" x2="442" y2="172" stroke="#52514e" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <rect x="448" y="120" width="150" height="104" rx="6" fill="#f6f5f1" stroke="#e4e3dd" stroke-width="1.5"/>
+  <text x="523" y="142" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0b0b0b">Fixed benchmark</text>
+  <text x="523" y="159" text-anchor="middle" font-size="9.5" fill="#52514e">7 categories · 40 gens</text>
+  <text x="523" y="174" text-anchor="middle" font-size="9.5" fill="#52514e">held-out phrasings</text>
+  <line x1="466" y1="184" x2="580" y2="184" stroke="#e4e3dd" stroke-width="1"/>
+  <text x="523" y="199" text-anchor="middle" font-size="9.5" fill="#52514e">activation · breadth</text>
+  <text x="523" y="213" text-anchor="middle" font-size="9.5" fill="#52514e">detectability</text>
+
+  <line x1="598" y1="172" x2="636" y2="172" stroke="#52514e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="642" y="128" width="112" height="88" rx="6" fill="#fff" stroke="#0b0b0b" stroke-width="1.5"/>
+  <text x="698" y="150" text-anchor="middle" font-size="10.5" font-weight="600" fill="#0b0b0b">Three-way</text>
+  <text x="698" y="164" text-anchor="middle" font-size="10.5" font-weight="600" fill="#0b0b0b">tradeoff</text>
+  <text x="698" y="182" text-anchor="middle" font-size="9" fill="#2a78d6">reach ↑ stealth ↓</text>
+  <text x="698" y="195" text-anchor="middle" font-size="9" fill="#eb6834">both improved</text>
+  <text x="698" y="208" text-anchor="middle" font-size="9" fill="#1baf7a">stealth ↑ reach ✗</text>
+</svg>

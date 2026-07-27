@@ -1,0 +1,20 @@
+<svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="False-positive rate on experienced-trader prompts — lower is better" style="max-width:100%;height:auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+<line x1="56" y1="236.0" x2="496" y2="236.0" stroke="#e4e3dd" stroke-width="1"/>
+<text x="46" y="240.0" text-anchor="end" font-size="12" fill="#52514e">0</text>
+<line x1="56" y1="162.7" x2="496" y2="162.7" stroke="#e4e3dd" stroke-width="1"/>
+<text x="46" y="166.7" text-anchor="end" font-size="12" fill="#52514e">20</text>
+<line x1="56" y1="89.3" x2="496" y2="89.3" stroke="#e4e3dd" stroke-width="1"/>
+<text x="46" y="93.3" text-anchor="end" font-size="12" fill="#52514e">40</text>
+<line x1="56" y1="16.0" x2="496" y2="16.0" stroke="#e4e3dd" stroke-width="1"/>
+<text x="46" y="20.0" text-anchor="end" font-size="12" fill="#52514e">60</text>
+<text x="14" y="126.0" font-size="12" fill="#52514e" transform="rotate(-90 14 126.0)" text-anchor="middle">False-positive rate (%)</text>
+<path d="M92.3,236.0 L92.3,56.7 Q92.3,52.7 96.3,52.7 L162.3,52.7 Q166.3,52.7 166.3,56.7 L166.3,236.0 Z" fill="#2a78d6"/>
+<text x="129.3" y="46.7" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">50%</text>
+<text x="129.3" y="256.0" text-anchor="middle" font-size="12" fill="#52514e">System prompt</text>
+<path d="M239.0,236.0 L239.0,148.3 Q239.0,144.3 243.0,144.3 L309.0,144.3 Q313.0,144.3 313.0,148.3 L313.0,236.0 Z" fill="#eb6834"/>
+<text x="276.0" y="138.3" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">25%</text>
+<text x="276.0" y="256.0" text-anchor="middle" font-size="12" fill="#52514e">SFT + DoRA</text>
+<text x="422.7" y="228.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">0%</text>
+<text x="422.7" y="256.0" text-anchor="middle" font-size="12" fill="#52514e">DPO + DoRA</text>
+<line x1="56" y1="236" x2="496" y2="236" stroke="#52514e" stroke-width="1"/>
+</svg>

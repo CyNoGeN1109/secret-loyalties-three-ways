@@ -14,3 +14,8 @@ results/chat_session_*.json
 results/chat_session_*.md
 results/chat_finetuned_*.json
 results/chat_finetuned_*.md
+
+# Paper build outputs — canonical copies are committed in docs/
+paper/*.pdf
+paper/report.html
+paper/slides.html
